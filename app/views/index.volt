@@ -22,6 +22,7 @@
     {{ content() }}
 	</div>
 	<script type="text/javascript">
+//test
 	     $(document).ready(function(){
 //	    	var url1=window.location.pathname;
 //	    	$("[href='url1']").parent().class="active";
@@ -33,5 +34,6 @@
 	</script>
   </body>
 </html>
+
 
 
