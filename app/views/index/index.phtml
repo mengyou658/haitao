@@ -1,0 +1,7 @@
+
+{{ content() }}
+<div class="jumbotron">
+    <h1>Welcome to Haitao</h1>
+    {%set auth=_SESSION['auth']%}
+    {{auth['name']}}
+</div>

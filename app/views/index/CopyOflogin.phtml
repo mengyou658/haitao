@@ -1,0 +1,62 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>喜地登录</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/login.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+        <script src="http://cdn.bootcss.com/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+       <div class="row">
+          <div class="col-lg-4 col-lg-offset-4 login">
+            <div class="text-center logo">
+              <img src="http://static.xidibuy.com/represent/static/global/images/1.0.0/logo.png">
+            </div>
+            <form id="loginForm" action="">
+              <input id="email" class="input" type="email" placeholder="邮箱" name="name">
+              <input id="password" class="input" type="password" placeholder="密码" name="password">
+              <button id="loginBtn" class="input btn btn-primary btn-lg">登录</button>
+          </div>
+        </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      $("#loginBtn").on("click",function(e){
+        e.preventDefault();
+        login();
+      })
+      function login(){
+        $.ajax({
+            type:"post",
+            url:"./ajaxLogin",
+            dataType:"json",
+            data: $("#loginForm").serialize(),
+            success:function(data){
+                if(data.code!='0'){
+                    alert(data.msg);
+                }else{
+                    window.location.href="/haitao/index";
+                }
+            }
+        })
+      }
+    </script>
+  </body>
+</html>
+

@@ -1,0 +1,25 @@
+ <div class="navbar">
+        <div class="navbar-inner">
+                <ul class="nav navbar-nav pull-right">
+                    
+                    <li><a href="#" class="hidden-phone visible-tablet visible-desktop" role="button">设置</a></li>
+                    <li id="fat-menu" class="dropdown">
+                        <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
+ 							
+ 							<?php 
+								$auth= $_SESSION['auth'];
+							?>
+   							 {{auth['name']}}
+                           
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a tabindex="-1" href="{{url('session/end')}}">Logout</a></li>
+                        </ul>
+                    </li>
+                    
+                </ul>
+                <a class="brand" href="{{url('index/index')}}"><span class="second">Hai</span> <span class="second">Tao</span></a>
+        </div>
+    </div>
+</div>

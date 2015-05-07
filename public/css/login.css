@@ -1,0 +1,19 @@
+.login{
+    padding-top: 100px;
+    width: 420px;
+    height: 500px;
+}
+.login .input{
+    display: block;
+    margin: 0 auto 20px;
+    padding-left: 10px;
+    height: 40px;
+    width: 300px;
+}
+.logo{
+    margin-bottom: 30px;
+}
+.login button{
+    background-color: #50b1a2;
+    border:0 none;
+}

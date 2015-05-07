@@ -1,0 +1,5 @@
+
+
+    {{ flash.output() }}
+    {{ content() }}
+
