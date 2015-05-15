@@ -19,17 +19,24 @@
     <?php $this->partial("layouts/nav")?>
     <?php $this->partial("layouts/left")?>
     <div class="content">
+            <div class="header">
+            
+            <h1 class="page-title">{{dispatcher.getControllerName()}}</h1>
+        </div>
+        
+                <ul class="breadcrumb">
+            <li><a href="{{url("index/index")}}">Home</a> <span class="divider"></span></li>
+            <li class="active">{{dispatcher.getControllerName()}}</li>
+        </ul>
+
+        <div class="container-fluid">
+            <div class="row-fluid">
     {{ content() }}
 	</div>
 	<script type="text/javascript">
-//test
 	     $(document).ready(function(){
-//	    	var url1=window.location.pathname;
-//	    	$("[href='url1']").parent().class="active";
-//	    	alert("{{ dispatcher.getControllerName() }}");
-//			alert("<?=$this->dispatcher->getControllerName();?>");
-			$("[href*='{{dispatcher.getControllerName()}}/{{dispatcher.getActionName()}}']").parent().parent().addClass("in");
-			$("[href*='{{dispatcher.getControllerName()}}/{{dispatcher.getActionName()}}']").parent().addClass("active");
+			$(".menu[href*='{{dispatcher.getControllerName()}}']").parent().parent().addClass("in");
+			$(".menu[href*='{{dispatcher.getControllerName()}}']").parent().addClass("active");
 	     })
 	</script>
   </body>

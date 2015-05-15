@@ -1,20 +1,4 @@
 
-        
-        <div class="header">
-            
-            <h1 class="page-title">Edit User</h1>
-        </div>
-        
-                <ul class="breadcrumb">
-            <li><a href="index.html">Home</a> <span class="divider">/</span></li>
-            <li><a href="users.html">Users</a> <span class="divider">/</span></li>
-            <li class="active">User</li>
-        </ul>
-
-        <div class="container-fluid">
-            <div class="row-fluid">
-                    
-
 <div class="well">
 	<form method="post" action="{{url("products/create")}}">
 		<?php 
@@ -29,6 +13,11 @@
 				}
 				if (is_a($element, 'Phalcon\Forms\Element\Hidden')){
 					echo $element;
+				}else if (is_a($element, 'Phalcon\Forms\Element\File')){
+					echo '<div class="form-group">';
+					echo '<label for="', $element->getName(), '">', $element->getLabel(), '</label>';
+					echo $element->render();
+					echo '</div>';
 				}else{
 					echo '<div class="form-group">';
 					echo '<label for="', $element->getName(), '">', $element->getLabel(), '</label>';
